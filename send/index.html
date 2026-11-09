@@ -6,20 +6,16 @@
 <meta name="robots" content="noindex">
 <title>Send us your business news | Deeside Business</title>
 <meta name="description" content="Share good news from your business with Deeside.com: new jobs, contract wins, openings, awards and more.">
+<link rel="stylesheet" href="https://www.deeside.com/wp-content/themes/deeside-news/fonts/open-sans.css">
 <style>
 :root{--ink:#1d1f1c;--muted:#5d6458;--line:#d9ddd4;--bg:#f6f7f3;--green:#232821;--accent:#b9d98a;--deep:#3d5a1e;--err:#b3261e}
 *{box-sizing:border-box}
 body{margin:0;font-family:"Open Sans",Arial,sans-serif;background:var(--bg);color:var(--ink);font-size:16px;line-height:1.5}
 a{color:var(--deep)}
 .wrap{max-width:860px;margin:0 auto;padding:0 18px}
-.top{background:#000;color:#fff}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;height:52px}
-.top a{color:#fff;text-decoration:none;font-weight:800;font-size:20px;letter-spacing:-.3px}
-.top a span{color:#e30613}
-.top nav a{font-size:13px;font-weight:600;margin-left:16px;opacity:.85}
 .sub{background:var(--green);color:#fff}
 .sub .wrap{display:flex;align-items:center;gap:10px;height:46px}
-.sub b{font-size:18px}.sub b span{color:var(--accent)}
+.sub .sect{font-size:20px;font-weight:800;margin:0;color:#fff;text-decoration:none;text-transform:uppercase;letter-spacing:.5px}
 .sub small{color:#cfd6c6;font-size:13px}
 .hero{background:var(--green);color:#fff;padding:26px 0 30px;border-top:1px solid #33402c}
 .hero h1{font-size:32px;line-height:1.15;margin:0 0 10px}
@@ -37,7 +33,7 @@ textarea{min-height:90px;resize:vertical}
 input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);border-color:var(--deep)}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
 .routes{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-@media(max-width:640px){.row,.routes{grid-template-columns:1fr}.hero h1{font-size:26px}.top nav{display:none}}
+@media(max-width:640px){.row,.routes{grid-template-columns:1fr}.hero h1{font-size:26px}}
 .route{border:2px solid var(--line);border-radius:10px;padding:14px;cursor:pointer;display:block;margin:0;font-weight:400}
 .route input{margin-right:6px}
 .route strong{font-size:16px}
@@ -71,12 +67,54 @@ form.write .only-write,form.own .only-own{display:block}
 .tips{background:#f2f7ea;border-left:4px solid var(--deep);padding:10px 14px;border-radius:0 6px 6px 0;font-size:14px;margin-top:6px}
 .foot{background:#000;color:#aaa;font-size:13px;padding:18px 0}
 .foot a{color:#ddd}
+
+/* Deeside.com site header, copied from the deeside-news theme (main9.css) */
+body{padding-top:80px}
+nav.ds{background:#000;min-height:80px;display:flex;position:fixed;top:0;left:0;right:0;z-index:9;font-family:"Open Sans",Arial,sans-serif}
+nav.ds a{color:#fff;text-decoration:none}
+nav.ds .nav-inner{display:flex;justify-content:space-between;align-items:center;width:100%;max-width:1140px;margin:0 auto;padding:0 15px}
+nav.ds .nav-inner ul{list-style-type:none;padding:0;margin:0}
+nav.ds ul li{display:inline-block}
+nav.ds .nav-item{font-size:14px;margin:0 5px;text-transform:uppercase}
+nav.ds .nav-item:hover{color:#23527c;text-decoration:underline}
+nav.ds .nav-item svg{width:15px;height:15px;color:#fff;fill:#fff}
+.brand-nav{max-width:250px;margin:0 50px;display:block}
+.brand-nav img{width:100%;display:block}
+.ds-menu{position:fixed;top:20px;right:20px;z-index:30;cursor:pointer;width:35px;padding:5px;display:none}
+.line1,.line2,.line3{position:relative;width:30px;height:4px;background:#fff;border-radius:5px;margin:4px auto;transition:.3s ease}
+.animate1{transform:rotate(45deg) translate(5px,5px)}
+.animate2{transform:rotate3d(40,20,0,140deg);opacity:0}
+.animate3{transform:rotate(-45deg) translate(5px,-7px)}
+@media only screen and (max-width:991px){
+  .ds-menu{display:block}
+  nav.ds .nav-inner{display:block}
+  nav.ds .nav-item{margin:0}
+  .brand-nav{margin:25px auto 10px auto}
+  nav.ds .nav-inner ul li{display:block;width:100%;text-align:center}
+  nav.ds .nav-inner ul li.social-item{display:inline-block;width:auto}
+  nav.ds .nav-inner ul li.social-item a{padding:15px}
+  nav.ds .nav-inner ul li a{display:block;width:100%;padding:15px 0}
+  nav.ds .nav-inner ul{display:none;text-align:center}
+  nav.ds .nav-inner ul.expanded{display:block}
+}
 </style>
 </head>
 <body>
-<header class="top"><div class="wrap"><a href="https://www.deeside.com">Deeside<span>.</span>com</a>
-<nav><a href="https://www.deeside.com/latest-news/">Latest</a><a href="https://www.deeside.com/tools/">Tools</a><a href="https://www.deeside.com/advertise/">Advertise</a></nav></div></header>
-<div class="sub"><div class="wrap"><b>Deeside <span>Business</span></b><small>business.deeside.com</small></div></div>
+<div class="ds-menu" id="dsMenu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div>
+<nav class="ds"><div class="nav-inner">
+<a href="https://www.deeside.com" class="brand-nav"><img src="https://www.deeside.com/wp-content/themes/deeside-news/assets/deeside-logo2020nobadge.jpg" alt="Deeside.com"></a>
+<ul id="dsNav">
+<li><a class="nav-item" href="https://www.deeside.com/news/">LATEST</a></li>
+<li><a class="nav-item" href="https://www.deeside.com/tools/">TOOLS</a></li>
+<li><a class="nav-item" href="https://www.deeside.com/fuel-price-map/">FUEL PRICES</a></li>
+<li><a class="nav-item" href="https://www.deeside.com/police-and-crime/">POLICE</a></li>
+<li><a class="nav-item" href="https://www.deeside.com/advertise/">ADVERTISE</a></li>
+<li class="nav-item social-item"><a href="https://twitter.com/deesidedotcom" target="_blank" aria-label="X"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a></li>
+<li class="nav-item social-item"><a href="https://www.facebook.com/deesidenews" target="_blank" aria-label="Facebook"><svg viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg></a></li>
+<li class="nav-item social-item"><a href="https://www.instagram.com/deesidedotcom/" target="_blank" aria-label="Instagram"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a></li>
+</ul></div></nav>
+<script>document.getElementById("dsMenu").onclick=function(){["line1","line2","line3"].forEach(function(c,i){document.querySelector("."+c).classList.toggle("animate"+(i+1))});document.getElementById("dsNav").classList.toggle("expanded")};</script>
+<div class="sub"><div class="wrap"><a class="sect" href="/">Business</a></div></div>
 <section class="hero"><div class="wrap">
 <h1>Send us your business news</h1>
 <p>New jobs, a contract win, an opening, an award, a milestone? Tell us about it. It's free, it's open to every business in the area, and we want to report the good news. It takes about ten minutes.</p>
