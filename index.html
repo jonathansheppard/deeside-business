@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Deeside Business: good news from Deeside's businesses</title>
-<meta name="description" content="Good news from businesses across Deeside and Flintshire: new jobs, contract wins, openings, investment and awards. Part of Deeside.com.">
+<title>Deeside Business: business news from Deeside and Flintshire</title>
+<meta name="description" content="Business news from Deeside and Flintshire: jobs, contracts, openings, investment and awards. Part of Deeside.com.">
 <style>
 :root{--ink:#1d1f1c;--muted:#5d6458;--line:#d9ddd4;--bg:#f6f7f3;--green:#232821;--accent:#b9d98a;--deep:#3d5a1e}
 *{box-sizing:border-box}
@@ -22,8 +22,8 @@ a{color:var(--deep)}
 .sub b{font-size:18px}.sub b span{color:var(--accent)}
 .sub nav a{color:#dfe5d8;text-decoration:none;font-size:14px;font-weight:600;margin-left:18px}
 .sub nav a.cta{background:var(--accent);color:var(--green);padding:5px 12px;border-radius:5px}
-.hero{background:var(--green);color:#fff;padding:36px 0 40px}
-.hero h1{font-size:40px;line-height:1.1;margin:0 0 14px;max-width:720px}
+.hero{background:var(--green);color:#fff;padding:18px 0 20px}
+.hero h1{font-size:26px;line-height:1.2;margin:0;font-weight:700}
 .hero h1 span{color:var(--accent)}
 .hero p{color:#dfe5d8;margin:0 0 12px;max-width:720px;font-size:17px}
 .hero .btn{display:inline-block;margin-top:10px;background:var(--accent);color:var(--green);font-weight:700;text-decoration:none;padding:12px 20px;border-radius:7px}
@@ -41,6 +41,15 @@ h2.sec{font-size:24px;margin:34px 0 4px}
 .story h3{font-size:18px;line-height:1.25;margin:8px 0 6px}
 .story p{margin:0;color:var(--muted);font-size:14px}
 .story time{display:block;color:var(--muted);font-size:12px;margin-top:8px}
+.lead{display:grid;grid-template-columns:1.6fr 1fr;gap:18px;margin-top:24px}
+.lead .leadtop{grid-row:span 3}
+.lead .leadtop .img{aspect-ratio:16/10}
+.lead .leadtop h3{font-size:28px}
+.lead .side{flex-direction:row}
+.lead .side .img{width:38%;aspect-ratio:auto;flex:none}
+.lead .side h3{font-size:16px}
+.lead .side p{display:none}
+@media(max-width:760px){.lead{grid-template-columns:1fr}.lead .leadtop{grid-row:auto}.lead .leadtop h3{font-size:22px}}
 .more{text-align:center;margin:20px 0}
 .more button{background:#fff;border:1px solid var(--deep);color:var(--deep);border-radius:6px;padding:9px 18px;font:inherit;font-weight:600;cursor:pointer}
 .band{background:var(--green);color:#fff;border-radius:12px;padding:28px;margin:40px 0;display:grid;grid-template-columns:1.4fr 1fr;gap:24px;align-items:center}
@@ -63,39 +72,25 @@ h2.sec{font-size:24px;margin:34px 0 4px}
 <header class="top"><div class="wrap"><a href="https://www.deeside.com">Deeside<span>.</span>com</a>
 <nav><a href="https://www.deeside.com/latest-news/">Latest</a><a href="https://www.deeside.com/tools/">Tools</a><a href="https://fuel.deeside.com/">Fuel prices</a><a href="https://www.deeside.com/advertise/">Advertise</a></nav></div></header>
 <div class="sub"><div class="wrap"><b>Deeside <span>Business</span></b>
-<nav><a href="#news">Business news</a><a href="#about">About</a><a class="cta" href="send/">Send us your news</a></nav></div></div>
+<nav><a href="#news">Business news</a><a class="cta" href="send/">Send us your news</a></nav></div></div>
 
 <section class="hero"><div class="wrap">
-<h1>Good news from <span>Deeside's businesses</span></h1>
-<p>Local and regional papers used to run strong business pages. As newsrooms have shrunk and the chase for clicks has taken over, business stories have become mostly about failure: closures, job losses, firms going under.</p>
-<p>Deeside Business is about the other side. New jobs, contract wins, openings, investment, apprentices and awards from firms across Deeside and Flintshire, home to the biggest concentration of industry in North Wales. It's free and open to every business, large or small.</p>
-<a class="btn" href="send/">Send us your news</a>
+<h1>Business news from Deeside and Flintshire</h1>
 </div></section>
 
 <main class="wrap">
-<h2 class="sec" id="news">Business news</h2>
-<p class="sec-sub">The latest from Deeside.com's business coverage. Every story links to the full article on Deeside.com.</p>
+<section class="lead" id="lead"></section>
+<h2 class="sec" id="news">Latest business stories</h2>
 <div class="filters" id="filters"></div>
 <div class="grid" id="grid"><div class="loading">Loading the latest business news…</div></div>
 <div class="more"><button id="more" hidden>Show more</button></div>
 
 <section class="band">
-<div>
-<h2>Got good news? Tell us.</h2>
-<p>A short form, about ten minutes. Send your own press release, or answer a few questions and we'll write it for you. Add quotes and up to three photos.</p>
-<ul><li>New jobs and recruitment</li><li>Contract wins and investment</li><li>Openings, expansions and new products</li><li>Appointments, awards, apprentices and milestones</li></ul>
-</div>
+<div><h2>Send us your news</h2>
+<p>New jobs, contract wins, openings, appointments, awards. Send your own press release, or answer a few questions and we'll write it. Add quotes and photos.</p></div>
 <div><a class="btn" href="send/">Send us your news</a><p style="margin-top:12px;font-size:14px">Or email <a href="mailto:newsdesk@deeside.com" style="color:var(--accent)">newsdesk@deeside.com</a></p></div>
 </section>
 
-<section class="about" id="about">
-<div><h3>How it works</h3>
-<p>A Deeside.com journalist reads every submission, checks the facts and writes or edits the story in our style. Good news goes on Deeside.com as well as here, so it reaches our full readership.</p>
-<p>Sending a story doesn't guarantee we'll publish it, and nothing here is paid for. Advertising and sponsored content on Deeside.com are always labelled.</p></div>
-<div><h3>About Deeside.com</h3>
-<p>Deeside.com is independent local news for Deeside and Flintshire. Alongside the news we run live tools for the area, from fuel prices and planning applications to food hygiene ratings and traffic.</p>
-<p><a href="https://www.deeside.com/tools/">See our tools</a></p></div>
-</section>
 </main>
 
 <footer class="foot"><div class="wrap">Deeside Business is part of <a href="https://www.deeside.com">Deeside.com</a>, independent local news for Deeside and Flintshire. <a href="send/">Send us your news</a>.</div></footer>
@@ -141,20 +136,23 @@ Promise.all([get("include=" + PICKS.join(",")), get("categories=" + CAT + "&afte
   render();
 });
 
+function card(i, cls){
+  var a = document.createElement("a"); a.className = "story" + (cls ? " " + cls : ""); a.href = i.link;
+  a.innerHTML = '<div class="img"></div><div class="body"><span class="tag"></span><h3></h3><p></p><time></time></div>';
+  if (i.img) a.querySelector(".img").style.backgroundImage = "url('" + i.img.replace(/'/g, "%27") + "')";
+  a.querySelector(".tag").textContent = i.tag;
+  a.querySelector("h3").textContent = i.title;
+  a.querySelector("p").textContent = i.ex;
+  a.querySelector("time").textContent = i.date.toLocaleDateString("en-GB", {day: "numeric", month: "long", year: "numeric"});
+  return a;
+}
 function render(){
-  var g = document.getElementById("grid"), list = items.filter(function(i){ return filter === "All" || i.tag === filter; });
+  var L = document.getElementById("lead"); L.innerHTML = "";
+  items.slice(0, 4).forEach(function(i, n){ L.appendChild(card(i, n ? "side" : "leadtop")); });
+  var g = document.getElementById("grid"), list = items.slice(4).filter(function(i){ return filter === "All" || i.tag === filter; });
   if (!items.length) { g.innerHTML = '<div class="loading">Couldn\'t load the stories just now. <a href="https://www.deeside.com/category/business/">See business news on Deeside.com</a>.</div>'; return; }
   g.innerHTML = "";
-  list.slice(0, shown).forEach(function(i){
-    var a = document.createElement("a"); a.className = "story"; a.href = i.link;
-    a.innerHTML = '<div class="img"></div><div class="body"><span class="tag"></span><h3></h3><p></p><time></time></div>';
-    if (i.img) a.querySelector(".img").style.backgroundImage = "url('" + i.img.replace(/'/g, "%27") + "')";
-    a.querySelector(".tag").textContent = i.tag;
-    a.querySelector("h3").textContent = i.title;
-    a.querySelector("p").textContent = i.ex;
-    a.querySelector("time").textContent = i.date.toLocaleDateString("en-GB", {day: "numeric", month: "long", year: "numeric"});
-    g.appendChild(a);
-  });
+  list.slice(0, shown).forEach(function(i){ g.appendChild(card(i)); });
   var m = document.getElementById("more"); m.hidden = list.length <= shown;
   m.onclick = function(){ shown += PAGE; render(); };
 }
