@@ -1,3 +1,2 @@
 User-agent: *
 Allow: /
-Sitemap: https://business.deeside.com/sitemap.xml
